@@ -1,0 +1,63 @@
+paths:
+  /api/v1/agora/generate-token:
+    post:
+      summary: Generar token de Agora
+      tags:
+        - Video Consulta
+      description: Genera un token de Agora para una reunión en un canal específico. El token es utilizado para autenticar a los participantes en una sesión de Agora RTC.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                channelName:
+                  type: string
+                  description: Nombre del canal de la reunión de Agora.
+                  example: "my-channel"
+                uid:
+                  type: integer
+                  description: ID de usuario único. Si no se proporciona, se asignará 0 por defecto.
+                  example: 12345
+      responses:
+        '200':
+          description: Token generado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  token:
+                    type: string
+                    description: Token generado para autenticar a los usuarios en el canal de Agora.
+                    example: "007eJxTYG...3deTgzLmV...JwUYY9p6Q=="
+        '400':
+          description: Solicitud incorrecta (falta algún parámetro requerido).
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Faltan parámetros requeridos"
+        '500':
+          description: Error interno al generar el token
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al crear el token válido de AgoraRTC"

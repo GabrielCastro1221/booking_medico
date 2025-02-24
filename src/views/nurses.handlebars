@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/css/nurses/nurses.css" />
+
+<div class="main-doctors mt-8">
+  <div class="doctors-heading">
+    <h1>Nuestro equipo de enfermeras</h1>
+  </div>
+
+<div class="main-inner-doctor">
+    {{#if nurses}}
+    {{#each nurses}}
+    <div class="doc-poster">
+      <div class="doc-icons">
+        <a href="/enfermeras/{{this._id}}">
+          <i class="fa-solid fa-eye"></i>
+        </a>
+      </div>
+      <img src="{{this.photo}}" alt="{{this.name}}" class="doc-photo" />
+      <div class="doc-details mb-3">
+        <h2>{{this.name}}</h2>
+      </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <p>{{message}}</p>
+    {{/if}}
+  </div>
+</div>
+
+<script src="/js/nurses/nurses.js"></script>

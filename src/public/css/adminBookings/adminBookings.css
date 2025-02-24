@@ -1,0 +1,116 @@
+.booking-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px;
+}
+
+.booking-card {
+    background-image: url(/assets/img/backgroung-pattern-1.png);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(40.333%);
+    text-align: center;
+    margin: 20px;
+}
+
+
+.booking-photo img {
+    width: 100%;
+    height: 200px;
+}
+
+.booking-info {
+    padding: 20px;
+}
+
+.booking-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: var(--btncolor);
+}
+
+.booking-info p {
+    margin: 5px 0;
+    color: var(--textcolor);
+}
+
+.booking-info p strong {
+    color: var(--btncolor);
+}
+
+.btn-booking {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.deleteBooking {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deleteBooking:hover {
+    background-color: #cc0000;
+}
+
+.approveBooking {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.approveBooking:hover {
+    background-color: var(--secondcolor);
+}
+
+.paidBooking {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.paidBooking:hover {
+    background-color: var(--secondcolor);
+}
+
+.cancelBooking {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancelBooking:hover {
+    background-color: var(--secondcolor);
+}
+
+@media (max-width: 1024px) {
+    .booking-card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-card {
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 485px) {
+    .btn-booking {
+        flex-direction: column;
+    }
+}

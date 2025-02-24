@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="/css/nursesDetail/nursesDetail.css">
+
+<section class="mt-13">
+  <div class="container">
+    <div id="content" class="grid">
+      <div class="profile">
+        <div class="profile-header">
+          <figure class="profile-image">
+            <img src="{{nurse.photo}}" alt="doctor imagen" id="doctor-photo" class="image" />
+          </figure>
+          <div class="profile-info">
+            <span id="specialization" class="specialization">{{nurse.specialization}}</span>
+            <h3 id="doctor-name" class="doctor-name">{{nurse.name}}</h3>
+            <p id="bio" class="bio">{{nurse.bio}}</p>
+            <div class="mt-3 contact-btn">
+              <a class="contact-doctor-link" target="_blank" href="https://api.whatsapp.com/send?phone={{nurse.phone}}"><i
+                  class="fa-brands fa-whatsapp"></i>
+                Contactar Enfermera</a>
+            </div>
+          </div>
+        </div>
+        <div class="tabs">
+          <button id="about-tab" class="tab"></button>
+        </div>
+        <div id="tab-content" class="tab-content">
+          <p class="info-title">Acerca de <span class="info-name">{{nurse.name}}</span></p>
+          <div class="info-container">
+            <p class="about">{{nurse.about}}</p>
+            <div class="container-cards">
+              <div class="education-section">
+                <h3 class="section-title">Educación</h3>
+                <ul class="education-list">
+                  {{#each nurse.education}}
+                  <li class="education-item">
+                    <div>
+                      <span class="date">{{this.startingDate}}
+                        -
+                        {{this.endingDate}}</span>
+                      <span class="date">{{this.date}}</span>
+                      <p class="degree">{{this.degree}}</p>
+                    </div>
+                    <p class="university">{{this.university}}</p>
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+              <div class="experience-section">
+                <h3 class="section-title">Experiencia</h3>
+                <ul class="experience-list">
+                  {{#each nurse.experiences}}
+                  <li class="experience-item">
+                    <div>
+                      <span class="date">{{this.startingDate}}
+                        -
+                        {{this.endingDate}}</span>
+                      <p class="position">{{this.position}}</p>
+                    </div>
+                    <p class="hospital">{{this.hospital}}</p>
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+              <div class="experience-section">
+                <h3 class="section-title">Servicios</h3>
+                <ul class="experience-list">
+                  {{#each nurse.services}}
+                  <li class="experience-item">
+                    <div>
+                      <span class="date">{{this.title}}</span>
+                      <p class="position">{{this.description}}</p>
+                    </div>
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

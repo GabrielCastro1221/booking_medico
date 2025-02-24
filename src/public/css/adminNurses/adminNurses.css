@@ -1,0 +1,108 @@
+.nurses-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px;
+}
+
+.nurses-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333%);
+    text-align: center;
+    margin: 20px;
+}
+
+
+.nurses-photo img {
+    width: 100%;
+    height: 200px;
+}
+
+.nurses-info {
+    padding: 20px;
+}
+
+.nurses-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: var(--btncolor);
+}
+
+.nurses-info p {
+    margin: 5px 0;
+    color: var(--textcolor);
+}
+
+.nurses-info p strong {
+    color: var(--btncolor);
+}
+
+.btn-nurses {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.deleteNurse {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deleteNurse:hover {
+    background-color: #cc0000;
+}
+
+.approveNurse {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.approveNurse:hover {
+    background-color: var(--secondcolor);
+}
+
+.cancelNurse {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancelNurse:hover {
+    background-color: var(--secondcolor);
+}
+
+@media (max-width: 1024px) {
+    .nurses-card {
+        width: calc(60% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .nurses-card {
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 485px) {
+    .btn-nurses {
+        flex-direction: column;
+    }
+
+    .red-btn {
+        margin-top: 10px;
+    }
+}

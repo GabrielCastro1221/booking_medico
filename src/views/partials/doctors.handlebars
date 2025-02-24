@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/css/doctors/doctors.css" />
+
+<div class="main-doctors">
+  <div class="doctors-heading">
+    <h1>Nuestro Equipo de doctores</h1>
+  </div>
+
+  <section class="body-search">
+    <div class="search-container">
+      <form id="search-form" action="/buscar-doctor" method="get">
+        <label for="search-query" class="visually-hidden"></label>
+        <input id="search-query" class="in" type="search" name="query" placeholder="Buscar Doctor"
+          aria-label="Buscar Doctor">
+        <button class="search-btn" type="submit" aria-label="Buscar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <div class="main-inner-doctor">
+    {{#if doctors}}
+    {{#each doctors}}
+    <article class="doc-poster">
+      <div class="doc-icons">
+        <a href="/doctores/{{this._id}}" title="Ver detalles de {{this.name}}">
+          <i class="fa-solid fa-eye"></i>
+        </a>
+      </div>
+      <img src="{{this.photo}}" alt="Foto de {{this.name}}" class="doc-photo" loading="lazy" />
+      <div class="doc-details mb-3">
+        <h2>{{this.name}}</h2>
+      </div>
+    </article>
+    {{/each}}
+    {{else}}
+    <p class="message-error" role="alert">{{message}}</p>
+    {{/if}}
+  </div>
+</div>
+
+<script src="/js/doctors/doctors.js"></script>

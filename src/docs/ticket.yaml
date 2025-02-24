@@ -1,0 +1,222 @@
+paths:
+  /api/v1/tickets:
+    get:
+      summary: Obtener todos los tickets
+      tags:
+        - Tickets
+      description: Obtiene una lista de todos los tickets registrados en el sistema.
+      responses:
+        '200':
+          description: Tickets encontrados con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Tickets encontrados"
+                  tickets:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: string
+                          example: "64d8a8b54c4e5c3b01f8d9bc"
+                        title:
+                          type: string
+                          example: "Problema con la cuenta"
+                        description:
+                          type: string
+                          example: "El usuario reporta problemas con el acceso a su cuenta"
+                        status:
+                          type: string
+                          example: "open"
+                        createdAt:
+                          type: string
+                          format: date-time
+                          example: "2024-07-25T14:23:56Z"
+        '404':
+          description: No se encontraron tickets
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Tickets no encontrados"
+        '500':
+          description: Error al obtener los tickets
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al obtener los tickets"
+                  error:
+                    type: string
+                    example: "Error al obtener los tickets"
+  /api/v1/tickets/{id}:
+    get:
+      summary: Obtener un ticket por ID
+      tags:
+        - Tickets
+      description: Obtiene los detalles de un ticket específico por su ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del ticket
+      responses:
+        '200':
+          description: Ticket encontrado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Ticket encontrado"
+                  ticket:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "64d8a8b54c4e5c3b01f8d9bc"
+                      title:
+                        type: string
+                        example: "Problema con la cuenta"
+                      description:
+                        type: string
+                        example: "El usuario reporta problemas con el acceso a su cuenta"
+                      status:
+                        type: string
+                        example: "open"
+                      createdAt:
+                        type: string
+                        format: date-time
+                        example: "2024-07-25T14:23:56Z"
+        '404':
+          description: Ticket no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Ticket no encontrado"
+        '500':
+          description: Error interno al obtener el ticket
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al obtener el ticket"
+                  error:
+                    type: string
+                    example: "Error al obtener el ticket"
+    delete:
+      summary: Eliminar un ticket por ID
+      tags:
+        - Tickets
+      description: Elimina un ticket específico por su ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID del ticket
+      security:
+        - Bearer: []
+      responses:
+        '200':
+          description: Ticket eliminado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Ticket eliminado"
+                  ticket:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "64d8a8b54c4e5c3b01f8d9bc"
+                      title:
+                        type: string
+                        example: "Problema con la cuenta"
+                      description:
+                        type: string
+                        example: "El usuario reporta problemas con el acceso a su cuenta"
+                      status:
+                        type: string
+                        example: "open"
+                      createdAt:
+                        type: string
+                        format: date-time
+                        example: "2024-07-25T14:23:56Z"
+        '404':
+          description: Ticket no encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Ticket no encontrado"
+        '500':
+          description: Error interno al eliminar el ticket
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al eliminar el ticket"
+                  error:
+                    type: string
+                    example: "Error al eliminar el ticket"

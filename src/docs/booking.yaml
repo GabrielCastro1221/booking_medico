@@ -1,0 +1,220 @@
+paths:
+  /api/v1/bookings:
+    get:
+      summary: Obtener todas las citas médicas
+      tags:
+        - Citas Medicas
+      description: Obtiene una lista de todas las citas médicas registradas en la plataforma.
+      responses:
+        '201':
+          description: Citas médicas encontradas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Citas médicas encontradas"
+                  bookings:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        doctor:
+                          type: string
+                          example: "Doctor ID"
+                        user:
+                          type: string
+                          example: "User ID"
+                        appointment_date:
+                          type: string
+                          format: date-time
+                          example: "2023-12-28T10:00:00Z"
+                        ticket_price:
+                          type: number
+                          example: 100
+                        type:
+                          type: string
+                          example: "presencial"
+        '404':
+          description: Citas médicas no encontradas
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Citas médicas no encontradas"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al obtener las citas médicas"
+                  error:
+                    type: string
+                    example: "Error al obtener las citas médicas"
+  /api/v1/bookings/{id}:
+    get:
+      summary: Obtener una cita médica por ID
+      tags:
+        - Citas Medicas
+      description: Obtiene los detalles de una cita médica específica por su ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID de la cita médica
+      responses:
+        '201':
+          description: Cita médica encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Cita médica encontrada"
+                  booking:
+                    type: object
+                    properties:
+                      doctor:
+                        type: string
+                        example: "Doctor ID"
+                      user:
+                        type: string
+                        example: "User ID"
+                      appointment_date:
+                        type: string
+                        format: date-time
+                        example: "2023-12-28T10:00:00Z"
+                      ticket_price:
+                        type: number
+                        example: 100
+                      type:
+                        type: string
+                        example: "presencial"
+        '404':
+          description: Cita médica no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Cita médica no encontrada"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al obtener la cita médica"
+                  error:
+                    type: string
+                    example: "Error al obtener la cita médica"
+    delete:
+      summary: Eliminar una cita médica por ID
+      tags:
+        - Citas Medicas
+      description: Elimina una cita médica específica por su ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: ID de la cita médica
+      responses:
+        '201':
+          description: Cita médica eliminada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Cita médica eliminada"
+                  booking:
+                    type: object
+                    properties:
+                      doctor:
+                        type: string
+                        example: "Doctor ID"
+                      user:
+                        type: string
+                        example: "User ID"
+                      appointment_date:
+                        type: string
+                        format: date-time
+                        example: "2023-12-28T10:00:00Z"
+                      ticket_price:
+                        type: number
+                        example: 100
+                      type:
+                        type: string
+                        example: "presencial"
+        '404':
+          description: Cita médica no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Cita médica no encontrada"
+        '500':
+          description: Error interno del servidor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al eliminar la cita médica"
+                  error:
+                    type: string
+                    example: "Error al eliminar la cita médica"

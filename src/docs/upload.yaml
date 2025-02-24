@@ -1,0 +1,72 @@
+paths:
+  /api/v1/upload:
+    post:
+      summary: Subir un archivo de imagen
+      tags:
+        - Carga de archivos
+      description: Este endpoint permite subir un archivo de imagen al servidor. El archivo debe ser enviado en el cuerpo de la solicitud como parte de un formulario `multipart/form-data`.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                photo:
+                  type: string
+                  format: binary
+                  description: Archivo de imagen a cargar.
+      responses:
+        '200':
+          description: Archivo cargado correctamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Imagen cargada correctamente"
+                  file:
+                    type: object
+                    properties:
+                      url:
+                        type: string
+                        description: URL accesible del archivo cargado.
+                        example: "/uploads/images/photo123.jpg"
+                      public_id:
+                        type: string
+                        description: Identificador único del archivo cargado.
+                        example: "photo123"
+        '400':
+          description: No se proporcionó ningún archivo
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "No se proporcionó ningún archivo"
+        '500':
+          description: Error interno al procesar la carga
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error interno del servidor"
+                  error:
+                    type: string
+                    example: "Error interno al cargar el archivo"

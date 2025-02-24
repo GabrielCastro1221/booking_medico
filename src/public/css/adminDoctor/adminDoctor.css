@@ -1,0 +1,146 @@
+.doctor-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doctor-card {
+    background-image: url(/assets/img/backgroung-pattern-1.png);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+.doctor-photo img {
+    margin-top: -2000px;
+    margin-left: -40px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.doctor-info {
+    padding: 20px;
+    margin-right: 30px;
+}
+
+.doctor-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: var(--btncolor);
+}
+
+.doctor-info p {
+    margin: 5px 0;
+    color: var(--textcolor);
+}
+
+.doctor-info p strong {
+    color: var(--btncolor);
+}
+
+.btn-doctor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.deleteDoctor {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deleteDoctor:hover {
+    background-color: #cc0000;
+}
+
+.approveDoctor {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.approveDoctor:hover {
+    background-color: var(--secondcolor);
+}
+
+.cancelDoctor {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancelDoctor:hover {
+    background-color: var(--secondcolor);
+}
+
+@media (max-width: 1024px) {
+    .doctor-card {
+        width: 60%;
+    }
+
+    .doctor-photo {
+        display: none;
+    }
+}
+
+@media (max-width: 978px) {
+    .doctor-card {
+        width: 60%;
+    }
+
+    .doctor-info {
+        margin-right: -15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .doctor-card {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 559px) {
+    .doctor-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 485px) {
+    .doctor-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 435px) {
+    .doctor-card {
+        width: 100%;
+    }
+
+    .btn-doctor {
+        flex-direction: column;
+    }
+}

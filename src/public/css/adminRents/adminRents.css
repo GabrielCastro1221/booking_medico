@@ -1,0 +1,129 @@
+.rents-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 5px;
+}
+
+.rents-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: calc(33.333%);
+    text-align: center;
+    margin: 20px;
+}
+
+
+.rents-photo img {
+    width: 100%;
+    height: 200px;
+}
+
+.rents-info {
+    padding: 20px;
+}
+
+.rents-info h2 {
+    margin: 0 0 10px;
+    font-size: 1.5em;
+    color: var(--btncolor);
+}
+
+.rents-info p {
+    margin: 5px 0;
+    color: var(--textcolor);
+}
+
+.rents-info p strong {
+    color: var(--btncolor);
+}
+
+.btn-rent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.deleteRent {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deleteRent:hover {
+    background-color: #cc0000;
+}
+
+.approveRent {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.approveRent:hover {
+    background-color: var(--secondcolor);
+}
+
+.changeRentedStatus {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.changeRentedStatus:hover {
+    background-color: var(--secondcolor);
+}
+
+.changeAvaliableStatus {
+    padding: 8px;
+    background-color: var(--btncolor);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.changeAvaliableStatus:hover {
+    background-color: var(--secondcolor);
+}
+
+.cancelRent {
+    padding: 8px;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancelRent:hover {
+    background-color: var(--secondcolor);
+}
+
+@media (max-width: 1024px) {
+    .rents-card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .rents-card {
+        width: calc(100% - 40px);
+    }
+}
+
+@media (max-width: 485px) {
+    .btn-rent {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

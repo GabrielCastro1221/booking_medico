@@ -1,0 +1,52 @@
+<link rel="stylesheet" href="/css/editNurse/editNurse.css" />
+
+<div class="profile-container">
+    <h2 class="heading">Editar</h2>
+    <div class="form-group img-in">
+        <input type="file" id="photo" name="photo" accept=".jpg, .png" style="display: none;" />
+        <img id="photoPreview" class="photo-preview"
+            src="https://vineview.com/wp-content/uploads/2017/07/avatar-no-photo-300x300.png" alt="Vista previa" />
+        <button type="button" id="uploadButton" class="upload-button">Cargar Foto</button>
+    </div>
+    <form id="profileForm">
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="Nombre completo" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Correo electrónico" readonly />
+        </div>
+        <div class="form-group">
+            <label for="phone">Teléfono</label>
+            <input type="number" id="phone" name="phone" placeholder="Teléfono" />
+        </div>
+        <div class="form-group">
+            <label for="bio">Bio</label>
+            <input type="text" id="bio" name="bio" placeholder="Biografía" maxlength="50" />
+        </div>
+        <div class="form-group">
+            <label for="specialization">Especialización</label>
+             <input type="text" id="specialization" name="specialization" placeholder="Especializacion" maxlength="20" />
+        </div>
+        <div id="qualificationsContainer" class="section">
+            <h3 style="color: #1b715e;">Educación</h3>
+            <button type="button" id="addQualification" class="add-button">Agregar Título</button>
+        </div>
+        <div id="experiencesContainer" class="section">
+            <h3 style="color: #1b715e;">Experiencia</h3>
+            <button type="button" id="addExperience" class="add-button">Agregar Experiencia</button>
+        </div>
+        <div id="timeSlotsContainer" class="section">
+            <h3 style="color: #1b715e;">Servicios</h3>
+            <button type="button" id="addService" class="add-button">Agregar Servicio</button>
+        </div>
+        <div class="form-group">
+            <label for="about">Sobre mí</label>
+            <textarea id="about" name="about" rows="5" placeholder="Escribe algo acerca de ti" maxlength="110"></textarea>
+        </div>
+        <button type="submit" class="submit-button">Actualizar Perfil</button>
+    </form>
+</div>
+
+<script src="/js/editNurse/editNurse.js"></script>

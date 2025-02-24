@@ -1,0 +1,520 @@
+paths:
+  /api/v1/nurses:
+    get:
+      summary: Obtener todas las enfermeras
+      tags:
+        - Enfermeras
+      description: Obtiene una lista de todas las enfermeras registradas en el sistema.
+      responses:
+        '200':
+          description: Lista de enfermeras obtenida con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Enfermeras encontradas"
+                  enfermeras:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        _id:
+                          type: string
+                          example: "64d8a8b54c4e5c3b01f8d9bc"
+                        name:
+                          type: string
+                          example: "Juan Pérez"
+                        email:
+                          type: string
+                          example: "juan.perez@hospital.com"
+                        photo:
+                          type: string
+                          example: "/uploads/photo.jpg"
+        '404':
+          description: No se encontraron enfermeras
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Enfermeras no encontradas"
+        '500':
+          description: Error al obtener las enfermeras
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al obtener las enfermeras"
+                  error:
+                    type: string
+                    example: "Error al obtener las enfermeras"
+
+  /api/v1/nurses/{id}:
+    get:
+      summary: Obtener enfermera por ID
+      tags:
+        - Enfermeras
+      description: Obtiene los detalles de una enfermera específica mediante su ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID de la enfermera
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Enfermera encontrada con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Enfermera encontrada"
+                  enfermera:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "64d8a8b54c4e5c3b01f8d9bc"
+                      name:
+                        type: string
+                        example: "Juan Pérez"
+                      email:
+                        type: string
+                        example: "juan.perez@hospital.com"
+                      photo:
+                        type: string
+                        example: "/uploads/photo.jpg"
+        '404':
+          description: Enfermera no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Enfermera no encontrada"
+        '500':
+          description: Error al obtener la enfermera
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al obtener la enfermera"
+                  error:
+                    type: string
+                    example: "Error al obtener la enfermera"
+
+    put:
+      summary: Actualizar enfermera
+      tags:
+        - Enfermeras
+      description: Actualiza la información de una enfermera, incluyendo foto, educación, experiencias, y servicios.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID de la enfermera a actualizar
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  example: "Juan Pérez"
+                email:
+                  type: string
+                  example: "juan.perez@hospital.com"
+                education:
+                  type: string
+                  example: '[{"degree": "Licenciado en Enfermería", "institution": "Universidad ABC"}]'
+                experiences:
+                  type: string
+                  example: '[{"role": "Enfermero", "institution": "Hospital XYZ", "duration": "2 años"}]'
+                services:
+                  type: string
+                  example: '[{"service": "Urgencias"}]'
+                photo:
+                  type: string
+                  example: "/uploads/new-photo.jpg"
+      responses:
+        '200':
+          description: Enfermera actualizada con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Enfermera actualizada con éxito"
+                  enfermera:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "64d8a8b54c4e5c3b01f8d9bc"
+                      name:
+                        type: string
+                        example: "Juan Pérez"
+                      email:
+                        type: string
+                        example: "juan.perez@hospital.com"
+                      photo:
+                        type: string
+                        example: "/uploads/new-photo.jpg"
+        '404':
+          description: Enfermera no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Enfermera no encontrada"
+        '500':
+          description: Error al actualizar la enfermera
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al actualizar la enfermera"
+                  error:
+                    type: string
+                    example: "Error al actualizar la enfermera"
+
+    delete:
+      summary: Eliminar enfermera
+      tags:
+        - Enfermeras
+      description: Elimina una enfermera específica mediante su ID.
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID de la enfermera a eliminar
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Enfermera eliminada con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Enfermera eliminada"
+                  enfermera:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "64d8a8b54c4e5c3b01f8d9bc"
+                      name:
+                        type: string
+                        example: "Juan Pérez"
+                      email:
+                        type: string
+                        example: "juan.perez@hospital.com"
+                      photo:
+                        type: string
+                        example: "/uploads/photo.jpg"
+        '404':
+          description: Enfermera no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Enfermera no encontrada"
+        '500':
+          description: Error al eliminar la enfermera
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al eliminar la enfermera"
+                  error:
+                    type: string
+                    example: "Error al eliminar la enfermera"
+
+  /api/v1/nurses/profile/me:
+    get:
+      summary: Obtener perfil de la enfermera
+      tags:
+        - Enfermeras
+      description: Obtiene la información del perfil de la enfermera autenticada.
+      security:
+        - Bearer: []
+      responses:
+        '200':
+          description: Perfil de enfermera obtenido con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Informacion del perfil obtenida satisfactoriamente"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "64d8a8b54c4e5c3b01f8d9bc"
+                      name:
+                        type: string
+                        example: "Juan Pérez"
+                      email:
+                        type: string
+                        example: "juan.perez@hospital.com"
+                      photo:
+                        type: string
+                        example: "/uploads/photo.jpg"
+        '404':
+          description: Enfermera no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Enfermera no encontrada"
+        '500':
+          description: Error al obtener la información del perfil
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al obtener la informacion del perfil"
+                  error:
+                    type: string
+                    example: "Error al obtener la informacion del perfil"
+
+  /api/v1/nurses/{id}/approval-status:
+    put:
+      summary: Cambiar estado de aprobación a "approved"
+      tags:
+        - Enfermeras
+      description: Actualiza el estado de aprobación de una enfermera a "approved".
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID de la enfermera
+          schema:
+            type: string
+      security:
+        - Bearer: []
+      responses:
+        '200':
+          description: Estado de aprobación actualizado con éxito
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Estado de aprobación actualizado a 'approved'"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "64d8a8b54c4e5c3b01f8d9bc"
+                      name:
+                        type: string
+                        example: "Juan Pérez"
+                      email:
+                        type: string
+                        example: "juan.perez@hospital.com"
+                      photo:
+                        type: string
+                        example: "/uploads/photo.jpg"
+        '404':
+          description: Enfermera no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Enfermera no encontrada"
+        '500':
+          description: Error al cambiar el estado de aprobación
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al actualizar el estado de aprobación"
+                  error:
+                    type: string
+                    example: "Error al cambiar el estado de aprobación"
+
+  /api/v1/nurses/{id}/cancelled-status:
+    put:
+      summary: Cambiar estado de aprobación a "cancelled"
+      tags:
+        - Enfermeras
+      description: Actualiza el estado de aprobación de una enfermera a "cancelled".
+      parameters:
+        - in: path
+          name: id
+          required: true
+          description: ID de la enfermera
+          schema:
+            type: string
+      security:
+        - Bearer: []
+      responses:
+        '200':
+          description: Estado de aprobación actualizado a "cancelled"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: "Estado de aprobación actualizado a 'cancelled'"
+                  data:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        example: "64d8a8b54c4e5c3b01f8d9bc"
+                      name:
+                        type: string
+                        example: "Juan Pérez"
+                      email:
+                        type: string
+                        example: "juan.perez@hospital.com"
+                      photo:
+                        type: string
+                        example: "/uploads/photo.jpg"
+        '404':
+          description: Enfermera no encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Enfermera no encontrada"
+        '500':
+          description: Error al cambiar el estado de aprobación
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: false
+                  message:
+                    type: string
+                    example: "Error al actualizar el estado de aprobación"
+                  error:
+                    type: string
+                    example: "Error al cambiar el estado de aprobación"
