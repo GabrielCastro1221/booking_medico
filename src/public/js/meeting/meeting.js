@@ -41,7 +41,7 @@ async function initMeeting() {
         remoteAudioTrack.play();
         console.log("Audio remoto reproducido");
       }
-      
+
       if (mediaType === "video") {
         const remoteVideoTrack = user.videoTrack;
         remoteVideoTrack.play(remoteVideo);

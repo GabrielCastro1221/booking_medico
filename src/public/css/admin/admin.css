@@ -7,7 +7,7 @@
   margin-top: 70px;
   gap: 50px;
   padding: 20px;
-  margin-top: 100px;
+  margin-top: 130px;
 }
 
 .container {
@@ -202,7 +202,7 @@
   .doc {
     width: 100%;
   }
-} 
+}
 
 @media (max-width: 559px) {
   .tabs-btns {

@@ -2,6 +2,7 @@
     max-width: 1170px;
     padding: 20px;
     margin: 0 auto;
+    margin-top: 110px;
 }
 
 .grid {
@@ -139,7 +140,6 @@
     max-width: 100%;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
 }
 
 .education-title,

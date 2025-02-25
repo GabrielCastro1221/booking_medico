@@ -38,36 +38,30 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         nurseCard.innerHTML = `
           <div class="nurses-photo">
-            <img src="${
-              nurse.photo ||
-              "https://vineview.com/wp-content/uploads/2017/07/avatar-no-photo-300x300.png"
-            }" alt="Foto de la enfermera">
+            <img src="${nurse.photo ||
+          "https://vineview.com/wp-content/uploads/2017/07/avatar-no-photo-300x300.png"
+          }" alt="Foto de la enfermera">
           </div>
           <div class="nurses-info">
             <h2>${nurse.name}</h2>
             <p><strong>Email:</strong> ${nurse.email}</p>
             <p><strong>Teléfono:</strong> ${nurse.phone || "N/A"}</p>
-            <p><strong>Especialización:</strong> ${
-              nurse.specialization || "N/A"
-            }</p>
+            <p><strong>Especialización:</strong> ${nurse.specialization || "N/A"
+          }</p>
             <p><strong>Educación:</strong> ${renderList(nurse.education)}</p>
             <p><strong>Experiencias:</strong> ${renderList(
-              nurse.experiences
-            )}</p>
+            nurse.experiences
+          )}</p>
             <p><strong>Servicios:</strong> ${renderList(nurse.services)}</p>
-            <p><strong>Estado:</strong> <span class="nurse-status">${
-              nurse.isApproved
-            }</span></p>
+            <p><strong>Estado:</strong> <span class="nurse-status">${nurse.isApproved
+          }</span></p>
             <div class="btn-nurses">
-              <button class="approveNurse" data-id="${
-                nurse._id
-              }">Aprobar</button>
-              <button class="cancelNurse" data-id="${
-                nurse._id
-              }">Cancelar</button>
-              <button class="deleteNurse" data-id="${
-                nurse._id
-              }">Eliminar</button>
+              <button class="approveNurse" data-id="${nurse._id
+          }">Aprobar</button>
+              <button class="cancelNurse" data-id="${nurse._id
+          }">Cancelar</button>
+              <button class="deleteNurse" data-id="${nurse._id
+          }">Eliminar</button>
             </div>
           </div>
         `;
@@ -167,7 +161,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       nurseCardContainer.appendChild(messageParagraph);
     }
   } catch (error) {
-    console.error("Error fetching nurses:", error);
     const errorParagraph = document.createElement("p");
     errorParagraph.textContent = "Error al cargar los datos de las enfermeras.";
     errorParagraph.style.color = "#000";

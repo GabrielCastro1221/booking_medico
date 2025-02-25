@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Perfil de doctores",
       description:
         "Cada doctor deberá diligenciar un formulario en el que se almacenará la información sobre su especialidad y los horarios disponibles para las citas médicas. Cuando el perfil sea aprobado, podrá recibir citas de sus pacientes.",
-     "keywords": "perfil de doctores, especialidad médica, horarios de citas médicas, registro de médicos, formulario médico, aprobación de perfiles, atención especializada, citas con especialistas"
+      "keywords": "perfil de doctores, especialidad médica, horarios de citas médicas, registro de médicos, formulario médico, aprobación de perfiles, atención especializada, citas con especialistas"
     },
     {
       icon: "fa-solid fa-file-signature",
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "title": "Consultorios médicos disponibles",
       "description": "Los doctores tienen la posibilidad de publicar consultorios médicos para venta o alquiler. Este espacio está diseñado para facilitar la conexión entre personas que buscan un lugar adecuado para ejercer.",
       "keywords": "consultorios médicos, venta de consultorios, alquiler de consultorios, espacio médico, consultorios disponibles, profesionales de la salud, inmobiliaria médica, alquiler de espacios médicos"
-    },    
+    },
     {
       icon: "fa-solid fa-user-nurse",
       title: "Perfil de enfermeras",

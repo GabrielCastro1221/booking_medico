@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const img = document.createElement("img");
         img.src = content.imageSrc;
-        img.alt = content.imageAlt; 
+        img.alt = content.imageAlt;
         img.loading = "lazy";
 
         aboutInnerContentLeft.appendChild(img);

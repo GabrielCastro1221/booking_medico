@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         Toastify({
           text: "Inicio de sesión exitoso!",
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         Toastify({
           text: data.message || "Error al iniciar sesión",
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (error) {
       Toastify({
         text: "Error al conectar con el servidor",
-        duration: 1000,
+        duration: 3000,
         close: true,
         gravity: "top",
         position: "right",

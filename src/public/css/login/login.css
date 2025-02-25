@@ -1,5 +1,7 @@
 .section-padding {
     padding: 20px;
+    margin-top: 130px;
+    margin-bottom: 80px;
 }
 
 .container {
@@ -50,7 +52,7 @@
     width: 100%;
     padding: 12px;
     background-color: var(--btncolor);
-    color: white;
+    color: var(--bgcolor);
     font-size: 18px;
     border: none;
     border-radius: 5px;
@@ -78,4 +80,8 @@
 
 .link:hover {
     color: var(--secondcolor);
+}
+
+.error {
+    color: red
 }

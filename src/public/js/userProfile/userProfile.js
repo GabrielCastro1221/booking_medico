@@ -98,23 +98,21 @@ const renderBookings = (bookings) => {
       <div class="cita-header">
         <div class="dat">
           <span class="cita-date">Fecha: ${new Date(
-            booking.appointment_date
-          ).toLocaleString()}</span>
+      booking.appointment_date
+    ).toLocaleString()}</span>
         </div>
         
       </div>
       <div class="cita-body">
-        <h3>Precio: <span style="color: black;">$${
-          booking.ticket_price
-        } COP</span></h3>
+        <h3>Precio: <span style="color: black;">$${booking.ticket_price
+      } COP</span></h3>
       </div>
       <strong class="cita-type t">Tipo de cita: <span class="s">${booking.type}<span></strong>
       <div class="cita-footer">
-        ${
-          booking.type === "online"
-            ? `<a href="/video-consulta/${booking._id}" class="btn-link">Unirse a la cita</a>`
-            : ""
-        }
+        ${booking.type === "online"
+        ? `<a href="/video-consulta/${booking._id}" class="btn-link">Unirse a la cita</a>`
+        : ""
+      }
       </div>
     `;
     list.appendChild(listItem);
@@ -231,7 +229,7 @@ deleteButton.addEventListener("click", async () => {
     const response = await fetch(`/api/v1/users/${id}`, {
       method: "DELETE",
       headers: {
-        Authorization: `Bearer ${token}`, 
+        Authorization: `Bearer ${token}`,
       },
     });
     const result = await response.json();
@@ -240,7 +238,7 @@ deleteButton.addEventListener("click", async () => {
       localStorage.removeItem("user");
       Toastify({
         text: result.message,
-        duration: 1000,
+        duration: 3000,
         close: true,
         gravity: "top",
         position: "right",
@@ -253,7 +251,7 @@ deleteButton.addEventListener("click", async () => {
     } else {
       Toastify({
         text: `Error: ${result.message}`,
-        duration: 1000,
+        duration: 3000,
         close: true,
         gravity: "top",
         position: "right",
@@ -264,7 +262,7 @@ deleteButton.addEventListener("click", async () => {
     console.error("Error al eliminar el usuario:", error);
     Toastify({
       text: "Hubo un error al eliminar la cuenta.",
-      duration: 1000,
+      duration: 3000,
       close: true,
       gravity: "top",
       position: "right",

@@ -68,8 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
       (edu) => `
       <div>
         <span class="date">${new Date(
-          edu.startingDate
-        ).toLocaleDateString()} - ${new Date(
+        edu.startingDate
+      ).toLocaleDateString()} - ${new Date(
         edu.endingDate
       ).toLocaleDateString()}</span>
         <p class="degree">${edu.degree}</p>
@@ -84,8 +84,8 @@ document.addEventListener("DOMContentLoaded", () => {
       (exp) => `
       <div>
         <span class="date">${new Date(
-          exp.startingDate
-        ).toLocaleDateString()} - ${new Date(
+        exp.startingDate
+      ).toLocaleDateString()} - ${new Date(
         exp.endingDate
       ).toLocaleDateString()}</span>
         <p class="position">${exp.position}</p>
@@ -101,17 +101,16 @@ document.addEventListener("DOMContentLoaded", () => {
       <div class="card">
         <p><strong>ID del Paciente:</strong> ${appt.user}</p>
         <p><strong>Fecha de la Cita:</strong> ${new Date(
-          appt.appointment_date
-        ).toLocaleString()}</p>
+        appt.appointment_date
+      ).toLocaleString()}</p>
         <p><strong>Pagado:</strong> ${appt.status}</p>
         <p><strong>Precio del Boleto:</strong> $${appt.ticket_price}</p>
         <p><strong>Tipo:</strong> ${appt.type}</p>
         <div class="btns-act">
         <button class="app" data-id="${appt._id}" title="Aprobar cita medica">Aprobar</button>
-        ${
-          appt.type === "online"
-            ? `<p><strong></strong> <a class="video_link" title="Unirse a la video consulta" href="/video-consulta/${appt._id}" target="_blank"><i class="fa-solid fa-video"></i></a></p>`
-            : ""
+        ${appt.type === "online"
+          ? `<p><strong></strong> <a class="video_link" title="Unirse a la video consulta" href="/video-consulta/${appt._id}" target="_blank"><i class="fa-solid fa-video"></i></a></p>`
+          : ""
         }
         <div>
       </div>
@@ -204,7 +203,7 @@ document.addEventListener("DOMContentLoaded", () => {
         icon: "success",
         title: "Estado de renta actualizado a disponible",
         showConfirmButton: false,
-        timer: 1000,
+        timer: 3000,
       });
       fetchDoctorProfile();
     } catch (error) {
@@ -238,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
         icon: "success",
         title: "Estado de renta actualizado a alquilado",
         showConfirmButton: false,
-        timer: 1000,
+        timer: 3000,
       });
       fetchDoctorProfile();
     } catch (error) {
@@ -283,7 +282,7 @@ document.addEventListener("DOMContentLoaded", () => {
           icon: "success",
           title: "Renta eliminada con éxito",
           showConfirmButton: false,
-          timer: 1000,
+          timer: 3000,
         });
         fetchDoctorProfile();
       }

@@ -30,8 +30,8 @@ function renderTickets(tickets) {
       <div class="ticket-info">
         <p><strong>Id cita medica:</strong> ${ticket._id}</p>
         <p><strong>Fecha:</strong> ${new Date(
-          ticket.appointment_date
-        ).toLocaleString()}</p>
+      ticket.appointment_date
+    ).toLocaleString()}</p>
         <p><strong>Codigo:</strong> $${ticket.code}</p>
         <p><strong>Precio:</strong> ${ticket.amount}</p>
         <div class="btn-ticket">
@@ -57,7 +57,7 @@ function renderTickets(tickets) {
         if (result.status) {
           Toastify({
             text: "Ticket eliminada con éxito",
-            duration: 1000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -65,11 +65,11 @@ function renderTickets(tickets) {
           }).showToast();
           setTimeout(() => {
             location.reload();
-          }, 1000);
+          }, 3000);
         } else {
           Toastify({
             text: "Error al eliminar el ticket",
-            duration: 1000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -77,10 +77,9 @@ function renderTickets(tickets) {
           }).showToast();
         }
       } catch (error) {
-        console.error("Error al eliminar el ticket:", error);
         Toastify({
           text: "Error al eliminar el ticket",
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",

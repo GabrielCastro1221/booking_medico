@@ -31,29 +31,24 @@ function renderBookings(bookings) {
     card.innerHTML = `
       <div class="booking-info">
         <h2>${booking.doctor?.name || "Doctor desconocido"}</h2>
-        <p><strong>Paciente:</strong> ${
-          booking.user?.name || "Usuario desconocido"
-        }</p>
+        <p><strong>Paciente:</strong> ${booking.user?.name || "Usuario desconocido"
+      }</p>
         <p><strong>Fecha:</strong> ${new Date(
-          booking.appointment_date
-        ).toLocaleString()}</p>
+        booking.appointment_date
+      ).toLocaleString()}</p>
         <p><strong>Precio:</strong> $${booking.ticket_price.toFixed(2)}</p>
         <p><strong>Tipo:</strong> ${booking.type}</p>
         <p><strong>Estado de pago:</strong> <span>${booking.is_paid}</span></p>
-        <p><strong>Estado de aprobacion:</strong> <span>${
-          booking.status
-        }</span></p>
+        <p><strong>Estado de aprobacion:</strong> <span>${booking.status
+      }</span></p>
         <div class="btn-booking">
           <button class="paidBooking" data-id="${booking._id}">Pagada</button>
-          <button class="approveBooking" data-id="${
-            booking._id
-          }">Aprobar</button>
-          <button class="cancelBooking" data-id="${
-            booking._id
-          }">Cancelar</button>
-          <button class="deleteBooking" data-id="${
-            booking._id
-          }">Eliminar</button>
+          <button class="approveBooking" data-id="${booking._id
+      }">Aprobar</button>
+          <button class="cancelBooking" data-id="${booking._id
+      }">Cancelar</button>
+          <button class="deleteBooking" data-id="${booking._id
+      }">Eliminar</button>
         </div>
       </div>
     `;
@@ -75,7 +70,7 @@ function renderBookings(bookings) {
         if (result.status) {
           Toastify({
             text: "Cita médica eliminada con éxito",
-            duration: 1000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -83,11 +78,11 @@ function renderBookings(bookings) {
           }).showToast();
           setTimeout(() => {
             location.reload();
-          }, 1000);
+          }, 3000);
         } else {
           Toastify({
             text: "Error al eliminar la cita médica",
-            duration: 1000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -98,7 +93,7 @@ function renderBookings(bookings) {
         console.error("Error al eliminar la cita médica:", error);
         Toastify({
           text: "Error al eliminar la cita médica",
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",
@@ -125,7 +120,7 @@ function renderBookings(bookings) {
         if (result.status) {
           Toastify({
             text: "Estado de la cita cambiado con éxito",
-            duration: 1000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -137,7 +132,7 @@ function renderBookings(bookings) {
         } else {
           Toastify({
             text: "Error al cambiar el estado de la cita",
-            duration: 1000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -145,10 +140,9 @@ function renderBookings(bookings) {
           }).showToast();
         }
       } catch (error) {
-        console.error("Error al cambiar el estado de la cita:", error);
         Toastify({
           text: "Error al cambiar el estado de la cita",
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",
@@ -175,7 +169,7 @@ function renderBookings(bookings) {
         if (result.status) {
           Toastify({
             text: "Cita médica aprobada con éxito",
-            duration: 1000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -183,11 +177,11 @@ function renderBookings(bookings) {
           }).showToast();
           setTimeout(() => {
             location.reload();
-          }, 1000);
+          }, 3000);
         } else {
           Toastify({
             text: "Error al aprobar la cita médica",
-            duration: 1000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -195,10 +189,9 @@ function renderBookings(bookings) {
           }).showToast();
         }
       } catch (error) {
-        console.error("Error al aprobar la cita médica:", error);
         Toastify({
           text: "Error al aprobar la cita médica",
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",
@@ -222,7 +215,7 @@ function renderBookings(bookings) {
         if (result.status) {
           Toastify({
             text: "Cita médica pagada con éxito",
-            duration: 1000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -234,7 +227,7 @@ function renderBookings(bookings) {
         } else {
           Toastify({
             text: "Error al aprobar el pago de la cita médica",
-            duration: 1000,
+            duration: 3000,
             close: true,
             gravity: "top",
             position: "right",
@@ -242,10 +235,9 @@ function renderBookings(bookings) {
           }).showToast();
         }
       } catch (error) {
-        console.error("Error al aprobar el pago la cita médica:", error);
         Toastify({
           text: "Error al aprobar la cita médica",
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",

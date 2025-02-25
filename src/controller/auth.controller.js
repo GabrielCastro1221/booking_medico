@@ -172,7 +172,7 @@ class AuthController {
         user = await doctorModel.findOne({ email });
       }
       if (!user) {
-        return res.render("passwordChange", { error: "Usuario no encontrado" });
+        return res.render("resetPass", { error: "Usuario no encontrado" });
       }
       const token = generarResetToken();
       user.token_reset = {

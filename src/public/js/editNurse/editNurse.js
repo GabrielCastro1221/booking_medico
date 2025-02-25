@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("user", JSON.stringify(result.nurse));
         Toastify({
           text: "Perfil actualizado con éxito",
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",
@@ -192,11 +192,11 @@ document.addEventListener("DOMContentLoaded", () => {
         }).showToast();
         setTimeout(() => {
           location.reload();
-        }, 1000);
+        }, 3000);
       } else {
         Toastify({
           text: `${result.message || "Error desconocido"}`,
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",
@@ -204,13 +204,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }).showToast();
         setTimeout(() => {
           location.reload();
-        }, 1000);
+        }, 3000);
       }
     } catch (err) {
-      console.error("Error al actualizar el perfil:", err);
       Toastify({
         text: "Error al actualizar el perfil",
-        duration: 1000,
+        duration: 3000,
         close: true,
         gravity: "top",
         position: "right",

@@ -1,3 +1,9 @@
+.wrapper {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 130px;
+}
+
 .container {
     max-width: 1170px;
     padding: 20px;
@@ -139,7 +145,6 @@
     max-width: 100%;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    hyphens: auto;
 }
 
 .education-title,

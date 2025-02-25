@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .container-contact {
@@ -61,7 +62,7 @@
 
 .inputBox.error input,
 .inputBox.error textarea {
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid var(--redcolor);
 }
 
 .inputBox:not(error) input:focus,
@@ -76,7 +77,7 @@
 
 .inputBox .err-msg {
     font-size: 10px;
-    color: red;
+    color: var(--redcolor);
 }
 
 .contact-btn {
@@ -86,7 +87,7 @@
     font-size: 16px;
     font-weight: 500;
     border: none;
-    color: white;
+    color: var(--bgcolor);
     background-color: var(--btncolor);
     border-radius: 5px;
     cursor: pointer;
@@ -144,28 +145,7 @@
 }
 
 .infoBox .text a {
-    color: var(--textcolor
-    );
-}
-
-.social-icons {
-    position: absolute;
-    right: -50px;
-    bottom: 50px;
-    width: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-    font-size: 25px;
-    align-items: center;
-    border-bottom-right-radius: 30px;
-    color: white;
-    background-color: var(--btncolor);
-}
-
-.social-icons a {
-    color: white;
+    color: var(--textcolor);
 }
 
 @media (max-width: 768px) {
@@ -181,24 +161,7 @@
         width: 100%;
     }
 
-    .olimpia {
-        letter-spacing: 1px;
-    }
-
     .contact-info {
         margin-top: 40px;
-    }
-
-    .social-icons {
-        position: relative;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        max-width: 200px;
-        margin: auto;
-        padding: 10px 20px;
-        flex-direction: row;
-        justify-content: space-between;
-        border-radius: 0;
     }
 }

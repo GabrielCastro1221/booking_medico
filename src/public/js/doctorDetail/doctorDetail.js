@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         Toastify({
           text: `Error al agendar la cita: ${data.message}`,
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",
@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error al agendar la cita:", error);
       Toastify({
         text: "Error al agendar la cita.",
-        duration: 1000,
+        duration: 3000,
         close: true,
         gravity: "top",
         position: "right",

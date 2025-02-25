@@ -21,28 +21,23 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         userCard.innerHTML = `
             <div class="user-photo">
-              <img src="${
-                user.photo || "https://via.placeholder.com/150"
-              }" alt="Foto del usuario">
+              <img src="${user.photo || "https://via.placeholder.com/150"
+          }" alt="Foto del usuario">
             </div>
             <div class="user-info">
               <h2>${user.name}</h2>
               <p><strong>Email:</strong> ${user.email}</p>
               <p><strong>Teléfono:</strong> ${user.phone || "N/A"}</p>
               <p><strong>Género:</strong> ${user.gender}</p>
-              <p><strong>Rol:</strong> <span class="user-role">${
-                user.role
-              }</span></p>
-              <p><strong>Tipo de Sangre:</strong> ${
-                user.blood_type || "N/A"
-              }</p>
+              <p><strong>Rol:</strong> <span class="user-role">${user.role
+          }</span></p>
+              <p><strong>Tipo de Sangre:</strong> ${user.blood_type || "N/A"
+          }</p>
               <p><strong>Reservas:</strong> ${user.booking.length}</p>
-              <button class="delete-button btn-red deleteUser" data-id="${
-                user._id
-              }">Eliminar</button>
-              <button class="change-role-button btn-rol rolUser" data-id="${
-                user._id
-              }">Cambiar Rol</button>
+              <button class="delete-button btn-red deleteUser" data-id="${user._id
+          }">Eliminar</button>
+              <button class="change-role-button btn-rol rolUser" data-id="${user._id
+          }">Cambiar Rol</button>
             </div>
           `;
 
@@ -69,7 +64,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               e.target.closest(".user-card").remove();
               Toastify({
                 text: "Usuario eliminado con éxito",
-                duration: 1000,
+                duration: 3000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -78,7 +73,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else {
               Toastify({
                 text: `Error al eliminar el usuario: ${deleteData.message}`,
-                duration: 1000,
+                duration: 3000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -89,7 +84,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Error al eliminar el usuario:", err);
             Toastify({
               text: "Error al eliminar el usuario",
-              duration: 1000,
+              duration: 3000,
               close: true,
               gravity: "top",
               position: "right",
@@ -126,7 +121,7 @@ document.addEventListener("DOMContentLoaded", async () => {
               userRoleElement.textContent = changeRoleData.role;
               Toastify({
                 text: "Rol del usuario cambiado con éxito",
-                duration: 1000,
+                duration: 3000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -135,7 +130,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             } else {
               Toastify({
                 text: `Error al cambiar el rol del usuario: ${changeRoleData.message}`,
-                duration: 1000,
+                duration: 3000,
                 close: true,
                 gravity: "top",
                 position: "right",
@@ -146,7 +141,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             console.error("Error al cambiar el rol del usuario:", err);
             Toastify({
               text: "Error al cambiar el rol del usuario",
-              duration: 1000,
+              duration: 3000,
               close: true,
               gravity: "top",
               position: "right",
@@ -160,6 +155,5 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   } catch (err) {
     userCardsContainer.innerHTML = `<p>Error al obtener los usuarios</p>`;
-    console.error("Error al obtener los usuarios:", err);
   }
 });

@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   buttons.forEach((button) => {
     button.addEventListener("click", () => {
       const target = button.getAttribute("data-target");
-
       sections.forEach((section) => {
         if (section.id === target) {
           section.style.display = "block";
@@ -26,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const logoutButton = document.querySelector(".logout-button");
+
 logoutButton.addEventListener("click", () => {
   localStorage.removeItem("token");
   localStorage.removeItem("user");

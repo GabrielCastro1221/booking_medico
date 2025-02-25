@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         Toastify({
           text: result.message,
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         Toastify({
           text: `Error: ${result.message}`,
-          duration: 1000,
+          duration: 3000,
           close: true,
           gravity: "top",
           position: "right",
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error al enviar los datos:", error);
       Toastify({
         text: "Hubo un error al actualizar el perfil.",
-        duration: 1000,
+        duration: 3000,
         close: true,
         gravity: "top",
         position: "right",

@@ -13,7 +13,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
       btn.value = "Enviar Mensaje";
       Toastify({
         text: "Mensaje enviado con éxito!",
-        duration: 1000,
+        duration: 3000,
         close: true,
         gravity: "top",
         position: "right",
@@ -28,7 +28,7 @@ document.getElementById("form").addEventListener("submit", function (event) {
       btn.value = "Enviar Mensaje";
       Toastify({
         text: `Error: ${JSON.stringify(err)}`,
-        duration: 1000,
+        duration: 3000,
         close: true,
         gravity: "top",
         position: "right",

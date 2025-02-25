@@ -3,7 +3,7 @@
 <section class="section-padding mt-13 mb-8">
     <div class="container">
         <h3 class="title welcome-text">
-            Olvidate tu Contraseña
+            Olvidaste tu Contraseña
         </h3>
         <form action="/api/v1/auth/requestPasswordReset" method="POST" class="form">
             <div class="form-group">
@@ -16,7 +16,7 @@
             </div>
         </form>
          {{#if error}}
-        <p style="color: red;">{{ error }}</p>
+        <p class="error">{{ error }}</p>
         {{/if}}
     </div>
 </section>
